@@ -99,6 +99,26 @@ postgressQL学习记录
      --结果为:
     '2018-08-30 16:44:54.38849+08'
     ```
+5. RETURNING cloumname/* 将插入或是修改的新值返回出来
+   ```sql
+   declare v_created_user basic_user;--声明一个变量
+   insert into basic_user (nickname) values
+    (_nickname) 
+    returning * into v_created_user; --将插入到basic_user的值返回到 变量v_created_user中
+
+   ```
+
+6. extract
+    extract函数格式：
+    extract （field from source）
+    extract函数是从日期或者时间数值里面抽取子域，比如年、月、日等。source必须是timestamp、time、interval类型的值表达式。field是一个标识符或字符串，是从源数据中的抽取的域。
+    具体可见:https://blog.csdn.net/nextaction/article/details/76473613
+    其他值:
+   ```sql
+   select extract(epoch from now() + interval '30 days')
+   --返回'1538215003.33026'
+   --当前时间+30天的时间戳
+   ```
  ## 创建序列
  ```sql
  CREATE SEQUENCE basic.basic_user_uid_seq INCREMENT by 1 MINVALUE 1 MAXVALUE 9223372036854775807 START WITH 1;
@@ -107,3 +127,21 @@ postgressQL学习记录
  select nextval('basic.basic_user_uid_seq'); --查询获取序列下一个值
  select currval('basic.basic_user_uid_seq'); --查询序列当前的值
  ```
+
+## postgresql----字符串函数与操作符
+```sql
+select 'Post'||'gresql'||' good!';--select 'Post'||'gresql'||' good!';
+select 1||' one'; --1 one
+select bit_length('one'); --24 字符串的bit
+select char_length('中国'); --2 字符串长度
+select length('中国'); --2 字符串长度
+select octet_length('中国'); --6 字节数
+select lower('HeLLO'); --hello 转换小写
+select upper('HellO'); --HELLo 转换大写
+select initcap('hello world !'); --Hello World 驼峰
+select overlay('Txxxxas' placing 'hom' from 2 for 4); --Thomas 替换字符串
+
+```
+> 
+## 理论
+ > 行级安全的作用是什么?
