@@ -79,5 +79,11 @@ postgressQL学习记录
    SELECT '{apple,cherry apple, avocado}'::text[];
    --表示 将查询出来的结果转换成 text的数组
    ```
- 2. 
+ 2. current_setting
+   ```sql
+   select current_setting('hws.current_user_id')
+   --获取hws.current_user_id的配置信息,如果没有配置该数据会报出异常
+   select current_setting('hws.current_user_id',true)
+   --就算没有设置该属性,也不会报异常,只是会返回一个null
+   ```
  3. 
