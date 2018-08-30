@@ -86,9 +86,24 @@ postgressQL学习记录
    select current_setting('hws.current_user_id',true)
    --就算没有设置该属性,也不会报异常,只是会返回一个null
    ```
-   
+3. regclass ??
+4. timestamp WITHOUT TIME ZONE 一个不带时区的时间格式
+    ```sql
+    
+    select now():: timestamp without time zone
+    --结果为:
+    '2018-08-30 16:43:53.051775'
+
+    --我们查询 now()的时候就是 with time zone,这里为了更明确:
+    select now():: timestamp with time zone
+     --结果为:
+    '2018-08-30 16:44:54.38849+08'
+    ```
  ## 创建序列
  ```sql
  CREATE SEQUENCE basic.basic_user_uid_seq INCREMENT by 1 MINVALUE 1 MAXVALUE 9223372036854775807 START WITH 1;
  -- 创建一个名为:basic_user_uid_seq的序列,按照1递增 最小值为 1 最大值为9223372036854775807 从1开始
+
+ select nextval('basic.basic_user_uid_seq'); --查询获取序列下一个值
+ select currval('basic.basic_user_uid_seq'); --查询序列当前的值
  ```
