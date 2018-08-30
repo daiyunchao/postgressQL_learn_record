@@ -67,6 +67,17 @@ postgressQL学习记录
    select greatest('a','b','c','d'); --d
    select least('a','b','c','d'); --a
    select least(1,2,3,4); --1
-   
+
    ```
  
+ ## 特殊语法
+ 1. 双冒号 ::
+   > https://stackoverflow.com/questions/15537709/what-does-do-in-postgresql
+   简单的说就是类型转换
+   例如:
+   ```sql
+   SELECT '{apple,cherry apple, avocado}'::text[];
+   --表示 将查询出来的结果转换成 text的数组
+   ```
+ 2. 
+ 3. 
