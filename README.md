@@ -86,4 +86,9 @@ postgressQL学习记录
    select current_setting('hws.current_user_id',true)
    --就算没有设置该属性,也不会报异常,只是会返回一个null
    ```
- 3. 
+   
+ ## 创建序列
+ ```sql
+ CREATE SEQUENCE basic.basic_user_uid_seq INCREMENT by 1 MINVALUE 1 MAXVALUE 9223372036854775807 START WITH 1;
+ -- 创建一个名为:basic_user_uid_seq的序列,按照1递增 最小值为 1 最大值为9223372036854775807 从1开始
+ ```
