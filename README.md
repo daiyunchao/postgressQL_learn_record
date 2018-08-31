@@ -1,5 +1,5 @@
 # postgressQL_learn_record
-postgressQL学习记录
+postgressQL学习记录 (查漏补缺持续更新)
 
 ### 触发器过程
 > 在一个 PL/pgSQL 函数当做触发器调用的时候， 系统会在顶层的声明段里自动创建几个特殊变量。有如下这些
