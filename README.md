@@ -145,3 +145,15 @@ select overlay('Txxxxas' placing 'hom' from 2 for 4); --Thomas 替换字符串
 > 
 ## 理论
  > 行级安全的作用是什么?
+ 
+ ## 数据库索引
+ > 深入浅出数据库索引原理:https://www.cnblogs.com/aspwebchh/p/6652855.html 
+ 属于浅显易懂类型,文章让我认识到了 如果使用非聚合索引查询数据时,只是通过它来找到聚合索引,全部的索引查询都是通过聚合索引来查询的(除了组合查询)
+ 而另外一个例子:
+ ```sql
+ create index index_birthday_and_user_name on user_info(birthday, user_name);
+ select user_name from user_info where birthday = '1991-11-1'
+ ```
+ 使用组合查询的方式,查询效率也是极高的
+ 
+ 
