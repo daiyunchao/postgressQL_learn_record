@@ -161,6 +161,8 @@ select overlay('Txxxxas' placing 'hom' from 2 for 4); --Thomas 替换字符串
  1. 我把数据库想的太简单,他不只是一个数据仓库,他的功能是在是太强大
  2. 无论是 使用 函数/触发器/ 还是多长的sql,只是用到了数据库的九牛一毛....里面的道道还深得很
  3. 数据库的设计和实现,解耦程度很好,想我这种运用性的选手,在不关心数据库原理的这么多年,也能狗出数据库查询来....
+ 
  这是文章的连接:http://blog.jobbole.com/100349/
+ 
  这是我对文章提炼的脑图连接:http://naotu.baidu.com/file/4d3cc2fe3c1846b316367d7bc294da9c?token=8d6b7fa1ffbc5c09
  
